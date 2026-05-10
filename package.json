@@ -1,0 +1,12 @@
+{
+  "name": "vehicle-pictures-recolor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Recolor vehicle PNG assets into GitHub-ready folders.",
+  "scripts": {
+    "recolor": "node scripts/recolor-vehicles.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
