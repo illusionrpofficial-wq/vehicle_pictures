@@ -81,13 +81,18 @@ Commit and push the `public` folder, then use the image URLs directly from GitHu
 Raw GitHub example:
 
 ```text
-https://raw.githubusercontent.com/<OWNER>/<REPO>/<BRANCH>/vehicle_pictures/public/vehicle-side/1e90ff/adder.png
+https://raw.githubusercontent.com/illusionrpofficial-wq/<REPO>/<BRANCH>/vehicle_pictures/public/vehicle-side/1e90ff/adder.png
 ```
 
 jsDelivr example:
 
 ```text
-https://cdn.jsdelivr.net/gh/<OWNER>/<REPO>@<BRANCH>/vehicle_pictures/public/vehicle-side/1e90ff/adder.png
+https://cdn.jsdelivr.net/gh/illusionrpofficial-wq/<REPO>@<BRANCH>/vehicle_pictures/public/vehicle-side/1e90ff/adder.png
 ```
 
 If this project is at the repo root, you can remove `vehicle_pictures/` from the URL.
+
+## Contact
+
+- Name: `illusionrpofficial-wq`
+- Email: `illusion.rp.official@gmail.com`

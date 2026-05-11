@@ -1,8 +1,9 @@
 {
-  "name": "vehicle-pictures-recolor",
+  "name": "illusionrpofficial-wq",
   "version": "1.0.0",
   "private": true,
   "description": "Recolor vehicle PNG assets into GitHub-ready folders.",
+  "author": "illusionrpofficial-wq <illusion.rp.official@gmail.com>",
   "scripts": {
     "recolor": "node scripts/recolor-vehicles.js"
   },
