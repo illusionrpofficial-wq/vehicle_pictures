@@ -31,6 +31,11 @@ try {
     Set-Location -LiteralPath $RepoPath
 
     Invoke-Git @("rev-parse", "--is-inside-work-tree") | Out-Null
+    $branch = (Invoke-Git @("branch", "--show-current") | Select-Object -First 1).Trim()
+    if (-not $branch) {
+        throw "Nem sikerult megallapitani az aktualis Git branchet."
+    }
+
     Invoke-Git @("add", "-A") | Out-Null
 
     $changes = Invoke-Git @("diff", "--cached", "--name-status")
@@ -102,6 +107,27 @@ try {
     Write-Host ""
     Write-Host "Commit kesz:"
     Write-Host $subject
+
+    Write-Host ""
+    Write-Host "Push indul..."
+
+    $hasUpstream = $true
+    try {
+        Invoke-Git @("rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}") | Out-Null
+    }
+    catch {
+        $hasUpstream = $false
+    }
+
+    if ($hasUpstream) {
+        Invoke-Git @("push") | Write-Host
+    }
+    else {
+        Invoke-Git @("push", "-u", "origin", $branch) | Write-Host
+    }
+
+    Write-Host ""
+    Write-Host "Push kesz."
 }
 catch {
     Write-Host ""
